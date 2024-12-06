@@ -66,6 +66,12 @@
 
         elementosNoCarrinho = carrinho.length;
 
+        for (let i = 0; i < elementosNoCarrinho.length; i++) {
+
+            criarItemCarrinho()
+            
+        }
+
 
         function criarItemCarrinho(){
 
@@ -91,6 +97,9 @@
             item.appendChild(itemInfo);
 
             itemCarrinho.appendChild(item);
+
+            let carrinho = document.querySelector('.carrinho');
+            carrinho.appendChild(itemCarrinho);
 
         }
 
