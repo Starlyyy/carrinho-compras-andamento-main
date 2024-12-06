@@ -73,7 +73,7 @@
         }
 
 
-        function criarItemCarrinho(item){
+        function criarItemCarrinho(itemFofo){
 
             let itemCarrinho = document.createElement('div');
             itemCarrinho.classList.add = 'item-carrinho';
@@ -85,10 +85,10 @@
             itemInfo.classList.add = 'item-info';
 
             let nomeProduto = document.createElement('h2');
-            nomeProduto.textContent = item.nomeProduto;
+            nomeProduto.textContent = itemFofo.nomeProduto;
 
             let precoProduto = document.createElement('p');
-            precoProduto.classList.add = item.precoProduto;
+            precoProduto.classList.add = itemFofo.precoProduto;
             precoProduto.textContent = '10.00';
 
             itemInfo.appendChild(nomeProduto);
