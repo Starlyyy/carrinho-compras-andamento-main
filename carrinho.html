@@ -62,33 +62,35 @@
         let carrinho = localStorage.getItem("carrinho");
         
         carrinho = JSON.parse(carrinho);
-        console.log(carrinho)
+        console.log(carrinho);
+
+        elementosNoCarrinho = carrinho.length;
 
 
         function criarItemCarrinho(){
 
-            let itemCarrinho = document.createElement('div')
-            itemCarrinho.classList.add = 'item-carrinho'
+            let itemCarrinho = document.createElement('div');
+            itemCarrinho.classList.add = 'item-carrinho';
 
-            let item = document.createElement('div')
-            item.classList.add = 'item'
+            let item = document.createElement('div');
+            item.classList.add = 'item';
             
-            let itemInfo = document.createElement('div')
-            itemInfo.classList.add = 'item-info'
+            let itemInfo = document.createElement('div');
+            itemInfo.classList.add = 'item-info';
 
-            let nomeProduto = document.createElement('h2')
-            nomeProduto.textContent = 'teste'
+            let nomeProduto = document.createElement('h2');
+            nomeProduto.textContent = 'teste';
 
-            let precoProduto = document.createElement('p')
-            precoProduto.classList.add = 'preco'
-            precoProduto.textContent = '10.00'
+            let precoProduto = document.createElement('p');
+            precoProduto.classList.add = 'preco';
+            precoProduto.textContent = '10.00';
 
-            itemInfo.appendChild(nomeProduto)
-            itemInfo.appendChild(precoProduto)
+            itemInfo.appendChild(nomeProduto);
+            itemInfo.appendChild(precoProduto);
 
-            item.appendChild(itemInfo)
+            item.appendChild(itemInfo);
 
-            itemCarrinho.appendChild(item)
+            itemCarrinho.appendChild(item);
 
         }
 
