@@ -110,7 +110,28 @@
 
             });
 
+        } //fim criarItemCarrinho
+
+        function atualizarTotal(){
+            
+            let total = 0;
+
+            let carrinho = localStorage.getItem('carrinho');
+            carrinho = JSON.parse(carrinho);
+
+            carrinho.forEach((produto, index) =>{
+                let preco = (produto.preço); //R$ 100,00 -> 100.00
+                preco = preco.replace('R$', ''); 
+                preco = preco.replace(',', '.'); 
+
+                let quantidade = produto.quantidade;
+
+                total = total + (quantidade * preco);
+            });
+
         }
+
+        atualizarTotal();
 
 
     </script>
