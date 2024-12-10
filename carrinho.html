@@ -23,35 +23,8 @@
 
         <div class="carrinho-produtos">
             
-            <!-- item 1 -->
-            <div class="item-carrinho">
-                <div class="item">
-                    <img src="https://picsum.photos/300/500" alt="Imagem do Produto" class="item-img">
-                    <div class="item-info">
-                        <h2>Nome do Produto</h2>
-                        <p class="preco">R$ 50,00</p>
-                        <label for="quantidade">Quantidade:</label>
-                        <input type="number" id="quantidade" name="quantidade" min="1" value="1">
-                    </div>
-                </div>
 
-                <button class="botao-remover">Remover</button>
-            </div>
-
-            <!-- item 2 -->
-            <div class="item-carrinho">
-                <div class="item">
-                    <img src="https://picsum.photos/300/500" alt="Imagem do Produto" class="item-img">
-                    <div class="item-info">
-                        <h2>Nome do Produto</h2>
-                        <p class="preco">R$ 50,00</p>
-                        <label for="quantidade">Quantidade:</label>
-                        <input type="number" id="quantidade" name="quantidade" min="1" value="1">
-                    </div>
-                </div>
-
-                <button class="botao-remover">Remover</button>
-            </div>
+            <!-- aqui serao criados os produtos do storage -->
 
         </div>
 
@@ -77,12 +50,16 @@
         function criarItemCarrinho(itemLista) {
             
             let itemCarrinho = document.createElement('div');
-            //itemCarrinho.classList.add = 'item-carrinho';
             itemCarrinho.classList.add('item-carrinho');
 
             let item = document.createElement('div');
-            //item.classList.add = 'item';
             item.classList.add('item');
+
+            let imagem = document.createElement('img');
+            imagem.src = "https://picsum.photos/300/500";
+            imagem.classList.add("item-img");
+
+            item.appendChild(imagem);
 
             let itemInfo = document.createElement('div');
             itemInfo.classList.add('item-info');
@@ -97,14 +74,20 @@
             let quantidadeProduto = document.createElement('input');
             quantidadeProduto.id = "quantidade"
             quantidadeProduto.type = "number"
-            quantidadeProduto.value = itemLista.quantidade;
+            quantidadeProduto.value = itemLista.quantidade; 
 
             itemInfo.appendChild(nomeProduto);
             itemInfo.appendChild(precoProduto);
             itemInfo.appendChild(quantidadeProduto);
 
+            let botaoRemover = document.createElement('button');
+            botaoRemover.classList.add('botao-remover');
+            botaoRemover.textContent = "Remover";
+
             item.appendChild(itemInfo);
             itemCarrinho.appendChild(item);
+            itemCarrinho.appendChild(botaoRemover);
+
 
             let carrinho = document.querySelector('.carrinho-produtos');
             carrinho.appendChild(itemCarrinho);
