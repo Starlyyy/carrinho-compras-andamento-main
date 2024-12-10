@@ -92,6 +92,24 @@
             let carrinho = document.querySelector('.carrinho-produtos');
             carrinho.appendChild(itemCarrinho);
 
+            botaoRemover.addEventListener('click', ()=>{
+                itemCarrinho.remove(itemCarrinho);
+
+                let carrinho = localStorage.getItem('carrinho');
+
+                carrinho = JSON.parse(carrinho);
+
+                carrinho.forEach((produto, index) => {
+                    if (produto.nome == itemLista.nome) {
+                        carrinho.splice(index, 1);
+                    }
+                });
+
+                carrinho = JSON.stringify(carrinho);
+                localStorage.setItem('carrinho', carrinho);
+
+            });
+
         }
 
 
