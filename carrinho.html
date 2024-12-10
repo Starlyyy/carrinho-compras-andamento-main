@@ -29,7 +29,7 @@
         </div>
 
         <div class="total">
-            <p>Total: R$ 50,00</p>
+            <p>Total: R$<span class="total-compra"></span></p>
             <button class="botao-comprar">Finalizar Compra</button>
         </div>
     </main>
@@ -127,7 +127,10 @@
                 let quantidade = produto.quantidade;
 
                 total = total + (quantidade * preco);
-            });
+            }); //fim freach
+
+            let totalCompra = document.querySelector('.total-compra');
+            totalCompra.textContent = total;
 
         }
 
